@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>🎉 Happy Birthday Kenzy 🎉</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1a1a40, #000);
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: glow 2s infinite alternate;
+}
+
+h2 {
+  font-size: 1.6rem;
+  opacity: 0.9;
+}
+
+.name {
+  color: #ff4ecd;
+  font-weight: 800;
+}
+
+.date {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #ffd700;
+}
+
+.message {
+  margin: 30px auto;
+  max-width: 600px;
+  line-height: 2;
+  font-size: 1.1rem;
+  opacity: 0;
+  animation: slideUp 2s forwards;
+  animation-delay: 1s;
+}
+
+button {
+  margin-top: 30px;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff4ecd, #ffd700);
+  color: #000;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff4ecd;
+}
+
+/* قلوب */
+.heart {
+  position: absolute;
+  color: pink;
+  font-size: 20px;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+}
+
+/* نجوم */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+/* أنيميشن */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff4ecd;
+  }
+  to {
+    text-shadow: 0 0 25px #ffd700;
+  }
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🎂 عيد ميلاد سعيد 🎂</h1>
+  <h2>كل سنة وانتي طيبة يا <span class="name">كنزي</span> 💖</h2>
+  <div class="date">📅 1 / 1 — بداية سنة وبداية حكاية جديدة</div>
+
+  <div class="message" id="message">
+    كنزي ✨  
+    النهارده مش يوم عادي…  
+    ده اليوم اللي الدنيا قررت تبتسم أكتر 🌸  
+    أتمنى السنة الجديدة تكون مليانة  
+    ضحك، نجاح، راحة بال  
+    وكل حلم نفسك فيه يقرب خطوة ✨  
+    خليكي دايمًا منوّرة زي قلبك 🤍  
+  </div>
+
+  <button onclick="celebrate()">🎉 اضغطي هنا يا كنزي 🎉</button>
+</div>
+
+<footer>
+  🎶 With love & creativity 🎶
+</footer>
+
+<script>
+function celebrate() {
+  createHearts(50);
+  createStars(30);
+
+  document.getElementById("message").innerHTML =
+    "🎉✨ كنزي ✨🎉<br><br>" +
+    "السنة دي ليكي 👑<br>" +
+    "ضحكة من القلب ❤️<br>" +
+    "وقصص حلوة لسه بتتكتب ✍️<br><br>" +
+    "كل سنة وانتي أجمل حاجة في السنة 🎂💖";
+}
+
+function createHearts(count) {
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+  }
+}
+
+function createStars(count) {
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    const size = Math.random() * 3 + 1;
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(star);
+
+    setTimeout(() => star.remove(), 8000);
+  }
+}
+</script>
+
+</body>
+</html>
