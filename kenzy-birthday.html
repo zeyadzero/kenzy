@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>🎉 Happy Birthday Kenzy 🎉</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;800&display=swap');
+*{box-sizing:border-box;font-family:'Cairo',sans-serif}
+body{margin:0;background:radial-gradient(circle at top,#1a1a40,#000);overflow:hidden;color:#fff;text-align:center}
+.container{position:relative;z-index:2;padding:40px 20px;animation:fadeIn 2s}
+h1{font-size:3rem;animation:glow 2s infinite alternate}
+h2{font-size:1.6rem}
+.name{color:#ff4ecd;font-weight:800}
+.date{color:#ffd700;margin-top:10px}
+.message{max-width:600px;margin:30px auto;line-height:2;animation:slideUp 2s forwards}
+button{padding:15px 35px;border-radius:40px;border:none;font-size:1.1rem;font-weight:bold;background:linear-gradient(45deg,#ff4ecd,#ffd700);cursor:pointer}
+.heart{position:absolute;color:pink;animation:floatUp linear infinite}
+.star{position:absolute;background:white;border-radius:50%;animation:twinkle 3s infinite}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{opacity:1}}
+@keyframes glow{from{text-shadow:0 0 10px #ff4ecd}to{text-shadow:0 0 25px #ffd700}}
+@keyframes floatUp{from{transform:translateY(100vh)}to{transform:translateY(-10vh);opacity:0}}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🎂 عيد ميلاد سعيد 🎂</h1>
+<h2>كل سنة وانتي طيبة يا <span class="name">كنزي</span> 💖</h2>
+<div class="date">📅 1 / 1</div>
+<div class="message" id="message">
+كنزي ✨<br>النهارده مش يوم عادي…<br>كل سنة وانتي أجمل حاجة في السنة 💖
+</div>
+<button onclick="celebrate()">🎉 اضغطي هنا 🎉</button>
+</div>
+<script>
+function celebrate(){
+for(let i=0;i<50;i++){
+let h=document.createElement('div');
+h.className='heart';h.innerHTML='❤';
+h.style.left=Math.random()*100+'vw';
+h.style.fontSize=Math.random()*20+15+'px';
+h.style.animationDuration=Math.random()*3+3+'s';
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000)
+}}
+</script>
+</body>
+</html>
